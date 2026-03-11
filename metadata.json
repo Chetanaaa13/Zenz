@@ -1,0 +1,7 @@
+{
+  "name": "InsightGenie_",
+  "description": "Conversational Business Intelligence dashboard generator that turns natural language into actionable insights.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

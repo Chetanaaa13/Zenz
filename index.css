@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #4f9cff;
+  --color-electric-purple: #7c5cff;
+  --color-soft-cyan: #00f2ff;
+  --color-deep-black: #0f0f0f;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0f0f0f] text-white selection:bg-neon-blue/30;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-premium {
+    @apply bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)];
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(79, 156, 255, 0.3);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(124, 92, 255, 0.3);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 15s ease infinite;
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.upload-area {
+  @apply border-2 border-dashed border-white/20 rounded-3xl p-12 flex flex-col items-center justify-center transition-all cursor-pointer;
+}
+
+.upload-area:hover, .upload-area.dragging {
+  @apply border-neon-blue/50 bg-neon-blue/5;
+}
+
+.particle-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0f0f0f 100%);
+}
+
